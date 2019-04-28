@@ -1,11 +1,3 @@
-//
-//  EventsViewController.swift
-//  EvaluationApp
-//
-//  Created by Matthias Ruhland on 2019-04-27.
-//  Copyright © 2019 Matthias Ruhland. All rights reserved.
-//
-
 import UIKit
 
 class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {

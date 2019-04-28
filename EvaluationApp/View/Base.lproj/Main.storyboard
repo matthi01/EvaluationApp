@@ -95,10 +95,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="aT7-lZ-8xa">
             <objects>
-                <viewController id="QkD-Sx-STd" sceneMemberID="viewController">
+                <viewController id="QkD-Sx-STd" customClass="SettingsViewController" customModule="EvaluationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="47b-9h-MIX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,25 +154,25 @@
             </objects>
             <point key="canvasLocation" x="2943" y="-220"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="6tC-Xh-jAr">
             <objects>
-                <viewController id="Vfl-cV-hjs" sceneMemberID="viewController">
+                <viewController id="Vfl-cV-hjs" customClass="SignInViewController" customModule="EvaluationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AU1-Xd-lDa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbb-OI-Anw">
-                                <rect key="frame" x="160" y="94" width="94" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="124.5" y="430" width="165.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Tbb-OI-Anw" firstAttribute="top" secondItem="YmG-Gu-RA9" secondAttribute="top" constant="50" id="eep-pV-PwO"/>
-                            <constraint firstItem="Tbb-OI-Anw" firstAttribute="centerX" secondItem="AU1-Xd-lDa" secondAttribute="centerX" id="s2z-GL-SnT"/>
+                            <constraint firstItem="Tbb-OI-Anw" firstAttribute="centerY" secondItem="AU1-Xd-lDa" secondAttribute="centerY" id="Uws-63-AIk"/>
+                            <constraint firstItem="Tbb-OI-Anw" firstAttribute="centerX" secondItem="AU1-Xd-lDa" secondAttribute="centerX" id="YeT-S4-7tB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YmG-Gu-RA9"/>
                     </view>
@@ -181,10 +181,10 @@
             </objects>
             <point key="canvasLocation" x="1403" y="582"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Event View Controller-->
         <scene sceneID="AKw-Hk-wn0">
             <objects>
-                <viewController id="ejz-vG-1gI" sceneMemberID="viewController">
+                <viewController id="ejz-vG-1gI" customClass="AddEventViewController" customModule="EvaluationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lFp-Jv-JAr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -19,6 +19,9 @@
 		E960EA57227527BB005CCED7 /* AddEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E960EA55227527BB005CCED7 /* AddEventTableViewCell.xib */; };
 		E960EA5B22753D35005CCED7 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960EA5A22753D35005CCED7 /* EventsViewController.swift */; };
 		E960EA5D22755282005CCED7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960EA5C22755282005CCED7 /* TabBarController.swift */; };
+		E960EA6222755779005CCED7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960EA6122755779005CCED7 /* SettingsViewController.swift */; };
+		E960EA642275579D005CCED7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960EA632275579D005CCED7 /* SignInViewController.swift */; };
+		E960EA66227557D7005CCED7 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960EA65227557D7005CCED7 /* AddEventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		E960EA55227527BB005CCED7 /* AddEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEventTableViewCell.xib; sourceTree = "<group>"; };
 		E960EA5A22753D35005CCED7 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		E960EA5C22755282005CCED7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		E960EA6122755779005CCED7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E960EA632275579D005CCED7 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		E960EA65227557D7005CCED7 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,9 @@
 				E960EA3C22752088005CCED7 /* ViewController.swift */,
 				E960EA5A22753D35005CCED7 /* EventsViewController.swift */,
 				E960EA5C22755282005CCED7 /* TabBarController.swift */,
+				E960EA6122755779005CCED7 /* SettingsViewController.swift */,
+				E960EA632275579D005CCED7 /* SignInViewController.swift */,
+				E960EA65227557D7005CCED7 /* AddEventViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -191,12 +200,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E960EA5222752795005CCED7 /* EventTableViewCell.swift in Sources */,
+				E960EA66227557D7005CCED7 /* AddEventViewController.swift in Sources */,
 				E960EA3D22752088005CCED7 /* ViewController.swift in Sources */,
 				E960EA56227527BB005CCED7 /* AddEventTableViewCell.swift in Sources */,
 				E960EA3B22752088005CCED7 /* AppDelegate.swift in Sources */,
 				E960EA5D22755282005CCED7 /* TabBarController.swift in Sources */,
+				E960EA642275579D005CCED7 /* SignInViewController.swift in Sources */,
 				E960EA4322752088005CCED7 /* EvaluationApp.xcdatamodeld in Sources */,
 				E960EA5B22753D35005CCED7 /* EventsViewController.swift in Sources */,
+				E960EA6222755779005CCED7 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
