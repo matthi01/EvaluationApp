@@ -3,7 +3,7 @@ import UIKit
 class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var eventsTableView: UITableView!
-    var allEvents : [String] = []
+    var allEvents : [Event] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,6 +12,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         registerCells()
         configureTableView()
         allEvents = getAllEvents()
+        print(allEvents)
     }
     
     // table view code
@@ -42,6 +43,19 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == allEvents.count {
             performSegue(withIdentifier: "addEventSegue", sender: self)
+        } else {
+            performSegue(withIdentifier: "eventClickedSegue", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "eventClickedSegue" {
+            print("this is working")
+            if let nextViewController = segue.destination as? EventViewController {
+                nextViewController.eventName = "some name"
+                nextViewController.eventLocation = "some location"
+                nextViewController.reviewClosed = "no"
+            }
         }
     }
     
@@ -55,8 +69,14 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         eventsTableView.register(UINib(nibName: "EventTableViewCell", bundle: nil), forCellReuseIdentifier: "eventTableViewCell")
     }
     
-    func getAllEvents() -> [String] {
-        let events = ["event-1", "event-2", "event-3"]
+    func getAllEvents() -> [Event] {
+        var events : [Event] = [Event]()
+        
+        let limit : Int = 5
+        for index in 0...limit {
+            let newEvent: Event = Event(name: "Event-\(index)", location: "location-\(index)", reviewClosed: false, time: Date())
+            events.append(newEvent)
+        }
         return events
     }
 }
