@@ -13,5 +13,7 @@ class EventViewController: UIViewController {
         super.viewDidLoad()
         
         self.eventName.text = segueEventName
+        self.eventLocation.text = segueEventLocation
+        self.reviewClosed.text = String(segueReviewClosed)
     }
 }
