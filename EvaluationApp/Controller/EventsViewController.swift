@@ -52,9 +52,9 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if segue.identifier == "eventClickedSegue" {
             print("this is working")
             if let nextViewController = segue.destination as? EventViewController {
-                nextViewController.eventName = "some name"
-                nextViewController.eventLocation = "some location"
-                nextViewController.reviewClosed = "no"
+                nextViewController.segueEventName = "some name"
+                nextViewController.segueEventLocation = "some location"
+                nextViewController.segueReviewClosed = false
             }
         }
     }
