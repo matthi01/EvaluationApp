@@ -5,6 +5,16 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var eventsTableView: UITableView!
     var allEvents : [Event] = []
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         eventsTableView.delegate = self
@@ -15,7 +25,6 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print(allEvents)
     }
     
-    // table view code
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -25,19 +34,31 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell
+        
+        var returnCell : UITableViewCell = UITableViewCell()
         
         if indexPath.row < allEvents.count {
-            cell = eventsTableView.dequeueReusableCell(withIdentifier: "eventTableViewCell", for: indexPath) as! EventTableViewCell
+            let cell = eventsTableView.dequeueReusableCell(withIdentifier: "eventTableViewCell", for: indexPath) as! EventTableViewCell
+            
+            let event = allEvents[indexPath.row]
+            cell.name.text = event.name
+            cell.location.text = event.location
+            cell.rating.text = String(event.rating)
+            
+            returnCell = cell
+            
         } else if indexPath.row == allEvents.count  {
-            cell = eventsTableView.dequeueReusableCell(withIdentifier: "addEventTableViewCell", for: indexPath) as! AddEventTableViewCell
-        } else {
-            cell = UITableViewCell()
+            let cell = eventsTableView.dequeueReusableCell(withIdentifier: "addEventTableViewCell", for: indexPath) as! AddEventTableViewCell
+            
+            returnCell = cell
+            return returnCell
         }
         
-        cell.selectionStyle = .none
         
-        return cell
+        
+        returnCell.selectionStyle = .none
+        
+        return returnCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -50,18 +71,21 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "eventClickedSegue" {
-            print("this is working")
             if let nextViewController = segue.destination as? EventViewController {
-                nextViewController.segueEventName = "some name"
-                nextViewController.segueEventLocation = "some location"
-                nextViewController.segueReviewClosed = false
+                
+                if let indexPath = eventsTableView.indexPathForSelectedRow {
+                    nextViewController.segueEventName = allEvents[indexPath.row].name
+                    nextViewController.segueEventLocation = allEvents[indexPath.row].location
+                    nextViewController.segueReviewClosed = allEvents[indexPath.row].reviewClosed
+                }
             }
         }
     }
     
     func configureTableView() {
-        eventsTableView.rowHeight = UITableView.automaticDimension
-        eventsTableView.estimatedRowHeight = 90.0
+//        eventsTableView.rowHeight = UITableView.automaticDimension
+        eventsTableView.rowHeight = 100.0
+        eventsTableView.estimatedRowHeight = 100.0
     }
     
     func registerCells() {
@@ -74,7 +98,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let limit : Int = 5
         for index in 0...limit {
-            let newEvent: Event = Event(name: "Event-\(index)", location: "location-\(index)", reviewClosed: false, time: Date())
+            let newEvent: Event = Event(name: "Event-\(index)", location: "location-\(index)", rating: 4.5, reviewClosed: false, time: Date())
             events.append(newEvent)
         }
         return events
