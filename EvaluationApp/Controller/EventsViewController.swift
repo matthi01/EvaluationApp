@@ -29,6 +29,17 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return 1
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 100.00
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.black
+        
+        return headerView
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allEvents.count + 1
     }
@@ -50,12 +61,6 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             
             returnCell = cell
-            
-        } else if indexPath.row == allEvents.count  {
-            let cell = eventsTableView.dequeueReusableCell(withIdentifier: "addEventTableViewCell", for: indexPath) as! AddEventTableViewCell
-            
-            returnCell = cell
-            return returnCell
         }
         
         returnCell.selectionStyle = .none
@@ -64,11 +69,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == allEvents.count {
-            performSegue(withIdentifier: "addEventSegue", sender: self)
-        } else {
-            performSegue(withIdentifier: "eventClickedSegue", sender: self)
-        }
+        performSegue(withIdentifier: "eventClickedSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -85,9 +86,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func configureTableView() {
-//        eventsTableView.rowHeight = UITableView.automaticDimension
         eventsTableView.rowHeight = 100.0
-        eventsTableView.estimatedRowHeight = 100.0
     }
     
     func registerCells() {

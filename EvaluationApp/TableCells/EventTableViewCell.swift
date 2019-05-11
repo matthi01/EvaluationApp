@@ -23,7 +23,6 @@ class EventTableViewCell: UITableViewCell {
     }
     
     func setActiveBorder() {
-        print("Setting the border to active")
         innerCell.layer.borderColor = UIColor.green.cgColor
     }
 }
