@@ -45,6 +45,10 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.location.text = event.location
             cell.rating.text = String(event.rating)
             
+            if !event.reviewClosed {
+                cell.setActiveBorder()
+            }
+            
             returnCell = cell
             
         } else if indexPath.row == allEvents.count  {
@@ -53,8 +57,6 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             returnCell = cell
             return returnCell
         }
-        
-        
         
         returnCell.selectionStyle = .none
         
@@ -100,6 +102,10 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         for index in 0...limit {
             let newEvent: Event = Event(name: "Event-\(index)", location: "location-\(index)", rating: 4.5, reviewClosed: false, time: Date())
             events.append(newEvent)
+            
+            if index % 2 == 0 {
+                newEvent.reviewClosed = true
+            }
         }
         return events
     }
